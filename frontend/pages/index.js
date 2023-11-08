@@ -6,7 +6,6 @@ import client from '../client'
 // https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js
 
 const Home = ({ posts }) => {
-  console.log('client', client)
   const organizedPosts = {}
   posts.forEach((post) => {
     post.categories.forEach((category) => {

@@ -1,0 +1,109 @@
+@import 'variables';
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+ 
+  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+p{
+
+  margin:0;
+}
+
+// Grid
+
+.grid-container {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+
+}
+
+.grid-container li {
+  margin-bottom: 1rem;
+  list-style-type: none;
+}
+
+.grid-container li a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+.grid-container li a:hover {
+  text-decoration: underline;
+}
+
+
+// Home Page
+
+.category_title {
+
+  margin-bottom: 1rem;
+  text-decoration:underline;
+}
+
+.exhibitions-list {
+  padding: 0;
+  margin:0;
+}
+
+.title-links:hover {
+ color: lightgrey;
+ text-decoration: none;
+}
+
+// Header
+
+.header_title h1 {
+  font-size:$font_size_small;
+  color: $primary-color;
+  font-weight: 200;
+  margin:0;
+}
+
+.header_nav {
+  margin:0;
+}
+
+.header_nav li {
+  color: $primary-color;
+}
+
+.header_links {
+  margin: 0;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none; 
+}
+
+// Exhibition Pages
+
+.exhibition_content {
+
+  display: flex;
+  flex-direction: column;
+  max-width: 60%;
+  gap:0.5rem;
+}
+
+.exhibition_content a{
+
+  color: black;
+
+}
+
+.exhibition_content a:hover{
+
+  color: lightgray;
+  text-decoration: none;
+  
+}

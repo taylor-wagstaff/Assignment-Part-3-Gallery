@@ -26,7 +26,7 @@ const ptComponents = {
 }
 
 const Post = ({ post }) => {
-  console.log('post', post)
+
   const router = useRouter()
 
   const {
