@@ -49,6 +49,19 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+    defineField({
+      name: 'opens',
+      title: 'Opens',
+      type: 'string',
+    }),
+    defineField({
+      name: 'press',
+      title: 'Press',
+      type: 'file',
+      options: {
+        accept: '.pdf,.doc,.docx',
+      },
+    }),
   ],
 
   preview: {
