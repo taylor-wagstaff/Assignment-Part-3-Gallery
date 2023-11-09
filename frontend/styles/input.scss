@@ -21,10 +21,21 @@ p{
 // Grid
 
 .grid-container {
-  padding: 2rem;
+  padding: 1rem;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 3fr 1fr;
+	grid-template-areas:
+		"title navigation ."
+		"main main main"
+		"footer footer footer";
 
+
+}
+
+.exhibitions-container{
+	grid-area: main;
+  background-color: red;
 
 }
 
@@ -63,32 +74,46 @@ p{
 
 // Header
 
+
+.header_title {
+	grid-area: title;
+  background-color: blue;
+
+}
+
 .header_title h1 {
-  font-size:$font_size_small;
+  font-size:$font_size_large;
   color: $primary-color;
   font-weight: 200;
   margin:0;
 }
 
-.header_nav {
+.navigation_container {
   margin:0;
+  grid-area: navigation;
+  background-color: green;
+  
 }
 
-.header_nav li {
+.navigation_container li {
   color: $primary-color;
+
 }
 
-.header_links {
+.navigation_links {
   margin: 0;
-  margin-top: 2rem;
   padding: 0;
   list-style: none; 
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+
 }
 
 // Exhibition Pages
 
 .exhibition_content {
-
+  grid-area: main;
   display: flex;
   flex-direction: column;
   max-width: 60%;
@@ -106,4 +131,22 @@ p{
   color: lightgray;
   text-decoration: none;
   
+}
+
+
+// Footer
+
+.footer-container {
+  grid-area: footer;
+  background-color: yellow;
+}
+
+.about-content{
+
+  grid-area: main;
+}
+
+.contact-content{
+
+  grid-area: main;
 }

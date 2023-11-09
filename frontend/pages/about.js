@@ -1,29 +1,15 @@
 // pages/about.js
-import Link from 'next/link'
+
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Navigation from '../components/Navigation'
 
 export default function About() {
   return (
     <div className="grid-container">
-      <div>
-        <header className="header_title">
-          <h1>My Gallery Title</h1>
-        </header>
-        <nav className="header_nav">
-          <ul className="header_links">
-            <li>
-              <Link href="/">Exhibitions</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div>
+      <Header />
+      <Navigation />
+      <div className="about-content">
         <p>About Us</p>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -32,6 +18,7 @@ export default function About() {
           aliquip ex ea commodo consequat.
         </p>
       </div>
+      <Footer />
     </div>
   )
 }

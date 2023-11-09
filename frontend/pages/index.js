@@ -1,6 +1,9 @@
 import Link from 'next/link'
 import groq from 'groq'
 import client from '../client'
+import Header from '../components/Header'
+import Footer from '../components/Footer'
+import Navigation from '../components/Navigation'
 
 // I followed the turorial to setup and create a NextJs Sanity Blog Template
 // https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js
@@ -23,24 +26,8 @@ const Home = ({ posts }) => {
 
   return (
     <div className="grid-container">
-      <div>
-        <header className="header_title">
-          <h1>My Gallery Title</h1>
-        </header>
-        <nav className="header_nav">
-          <ul className="header_links">
-            <li>
-              <Link href="/">Exhibitions</Link>
-            </li>
-            <li>
-              <Link href="/about">About</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <Header />
+        <Navigation />
       <div className="exhibitions-container">
         {sortedCategoryKeys.map((categoryTitle) => (
           <div key={categoryTitle}>
@@ -65,6 +52,7 @@ const Home = ({ posts }) => {
           </div>
         ))}
       </div>
+      <Footer />
     </div>
   )
 }
