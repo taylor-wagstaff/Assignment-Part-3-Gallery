@@ -26,32 +26,36 @@ const Home = ({ posts }) => {
 
   return (
     <div className="grid-container">
-        <Header />
-        <Navigation />
-      <div className="exhibitions-container">
+      <Header />
+      <Navigation />
+      <main className="exhibitions-container">
         {sortedCategoryKeys.map((categoryTitle) => (
-          <div key={categoryTitle}>
-            <p className="category_title">{categoryTitle}</p>
-            <ul className="exhibitions-list">
-              {organizedPosts[categoryTitle].map(
-                ({ _id, title, slug, authorName, opens }) => (
-                  <li key={_id}>
-                    <Link
-                      className="title-links"
-                      href="/post/[slug]"
-                      as={`/post/${slug.current}`}
-                    >
-                      {authorName && <div>{authorName}</div>}
-                      {title}
-                      {opens && <div>{opens}</div>}
-                    </Link>
-                  </li>
-                )
-              )}
-            </ul>
+          <div className="exhibition-elements" key={categoryTitle}>
+            <div className="elements-title">
+              <p className="category_title">{categoryTitle}</p>
+            </div>
+            <div className="exhibition-elements-list">
+              <ul className="exhibitions-list">
+                {organizedPosts[categoryTitle].map(
+                  ({ _id, title, slug, authorName, opens }) => (
+                    <li key={_id}>
+                      <Link
+                        className="title-links"
+                        href="/post/[slug]"
+                        as={`/post/${slug.current}`}
+                      >
+                        {authorName && <div>{authorName}</div>}
+                        {title}
+                        {opens && <div>{opens}</div>}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
           </div>
         ))}
-      </div>
+      </main>
       <Footer />
     </div>
   )

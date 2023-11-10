@@ -6,6 +6,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <title>Treadler</title>
+        <metadata>Treadler Gallery located in Auckland</metadata>
       </Head>
       <Component {...pageProps} />
     </>
