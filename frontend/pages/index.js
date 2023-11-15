@@ -5,10 +5,13 @@ import Header from '../components/Header'
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
 
+
 // I followed the turorial to setup and create a NextJs Sanity Blog Template
 // https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js
 
 const Home = ({ posts }) => {
+  // JS Function to organise the categories correctly,
+  // so that Current starts first, followed by Upcoming and past.
   const organizedPosts = {}
   posts.forEach((post) => {
     post.categories.forEach((category) => {

@@ -21,16 +21,39 @@ function urlFor(source) {
 const ptComponents = {
   types: {
     image: ({ value }) => {
+
+      // interactive Js Function to click image for closer look, 
+      // Creates new window, couldnt figure out zoom for sanity images
+
+      // Set an onClick listener on an Image in React
+      // https://bobbyhadz.com/blog/react-onclick-on-image
+      const handleClick = (event, imageUrl) => {
+        event.preventDefault()
+        // change the url in the window for a closer look at the image
+        window.location.href = imageUrl
+      }
+
       if (!value?.asset?._ref) {
         return null
       }
-      return <img alt={value.alt || ' '} loading="lazy" src={urlFor(value)} />
+      return (
+        <img
+          alt={value.alt || ' '}
+          onClick={(event) => handleClick(event, urlFor(value))}
+          loading="lazy"
+          src={urlFor(value)}
+          onMouseOver={(e) => (e.currentTarget.style.cursor = 'pointer')}
+          onMouseOut={(e) => (e.currentTarget.style.cursor = 'default')}
+        />
+      )
     },
   },
 }
 
 const Post = ({ post }) => {
   const router = useRouter()
+
+
 
   const {
     title = 'Missing title',
@@ -51,15 +74,19 @@ const Post = ({ post }) => {
 
       <div className="exhibition_content">
         {/* change the access to object directly */}
-        <p>{post.title}</p>
-        <p>{post.name}</p>
-        <p>{post.opens}</p>
-        {press && (
-          <a href={press} target="_blank" rel="noopener noreferrer">
-            Exhibition Text
-          </a>
-        )}
-        <PortableText value={body} components={ptComponents} />
+        <div>
+          <p>{post.title}</p>
+          <p>{post.name}</p>
+          <p>{post.opens}</p>
+          {press && (
+            <a href={press} target="_blank" rel="noopener noreferrer">
+              Exhibition Text
+            </a>
+          )}
+        </div>
+        <div className="exhibition_images">
+          <PortableText value={body} components={ptComponents} />
+        </div>
       </div>
 
       <Footer />

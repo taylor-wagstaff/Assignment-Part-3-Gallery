@@ -1,7 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
+import Modal from './Modal'
+import GeoLocation from './GeoLocation'
 
 const Footer = () => {
+  const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState('')
   return (
     <div className="footer-container">
@@ -15,6 +18,10 @@ const Footer = () => {
             <p style={{ color: 'blue' }}>Location of Gallery</p>
             <p>86a Queen Street</p>
             <p>Auckland City Central</p>
+            <div className="buy_button">
+              <button onClick={() => setIsOpen(true)}>Map</button>
+              {isOpen && <Modal setIsOpen={setIsOpen} />}
+            </div>
           </div>
           <div>
             <div className="form-elements">
@@ -34,6 +41,9 @@ const Footer = () => {
                 <button type="submit">Subscribe</button>
               </form>
             </div>
+          </div>
+          <div>
+            <GeoLocation />
           </div>
         </div>
       </footer>
