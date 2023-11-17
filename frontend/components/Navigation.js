@@ -15,6 +15,9 @@ const Navigation = () => {
           <li className="links">
             <Link href="/contact">Contact</Link>
           </li>
+          <li className="links">
+            <Link href="/accessibility">Accessibility</Link>
+          </li>
         </ul>
       </nav>
     </div>

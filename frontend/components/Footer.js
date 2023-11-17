@@ -42,11 +42,10 @@ const Footer = () => {
               </form>
             </div>
           </div>
-          <div>
-            <GeoLocation />
-          </div>
+          <div></div>
         </div>
       </footer>
+        <GeoLocation />
     </div>
   )
 }

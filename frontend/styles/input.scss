@@ -1,10 +1,24 @@
 @import 'variables';
 
+:root {
+  --font-size-small: 16px;
+  --font-size-large: 30px;
+  --background-color: white;
+  --font-color:black;
+  --secondary-color:blue;
+
+}
+
+
+
 html, body {
   font: 100% $font-stack;
-  color: $primary-color;
+  color: var(--font-color);
   margin:0;
   height: 100vh;
+  font-size: var(--font-size-small);
+  background-color: var(--background-color) ;
+ 
   
   
 }
@@ -15,6 +29,7 @@ h1 {
   margin-inline-start: 0;
   margin-inline-end: 0;
   font-weight: bold;
+  color: var(--font-color);
 }
 
 
@@ -83,7 +98,7 @@ p{
 
 
 .title-links:hover {
- color: blue;
+  color: var(--secondary-color);
  text-decoration: none;
 }
 
@@ -99,7 +114,7 @@ p{
 
 .header_title h1 {
   font-size:$font_size_large;
-  color: $primary-color;
+  color: var(--font-color);
   font-weight: 200;
   margin:0;
 }
@@ -120,7 +135,7 @@ p{
   display: flex;
   flex-direction: row;
   gap:10px;
-  color: black;
+  color: var(--font-color);
   text-decoration: none;
 
 }
@@ -128,12 +143,12 @@ p{
 
 .links a {
   text-decoration: none;
-  color: $primary-color;
+  color: var(--font-color);
   
 }
 
 .links a:hover {
-  color: blue;
+  color: var(--secondary-color);
  
 }
 
@@ -151,7 +166,7 @@ p{
 
 .exhibition_content a{
 
-  color: black;
+  color: var(--font-color);
 
 }
 
@@ -184,7 +199,7 @@ p{
 .elements-title{
   
   width:100px;
-  border-top: 1px solid black;
+  border-top: 1px solid var(--font-color);
   padding-top:10px;
   padding-left: 20px;
  
@@ -196,8 +211,8 @@ p{
 
   width:100%;
   
-  border-top: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 1px solid var(--font-color);
+  border-left: 1px solid var(--font-color);
   padding-bottom: 100px;
   padding-top:10px;
   padding-left: 20px;
@@ -214,7 +229,7 @@ p{
 .exhibition-elements-list a{
   list-style: none;
   text-decoration: none;
-  color: black;
+  color: var(--font-color);
  
 
 }
@@ -265,8 +280,8 @@ form {
   flex-direction:column;
   width:100%;
 
-  border-top: 1px solid black;
-  border-left: 1px solid black;
+  border-top: 1px solid var(--font-color);
+  border-left: 1px solid var(--font-color);
   padding-bottom: 100px;
   padding-top:10px;
   padding-left: 20px;
@@ -281,7 +296,7 @@ form {
 
 input{
   font-family: $font-stack;
-  font-size: $font_size_small;
+  font-size: var(--font-size-small);
   font-style: italic;
   border-top: none;
   border-left: none;
@@ -292,7 +307,7 @@ input{
 
 textarea {
   font-family: $font-stack;
-   font-size:$font_size_small;
+   font-size: var(--font-size-small);
    font-style: italic;
   resize: none;
   border: 1px solid #DCDADA;
@@ -301,7 +316,7 @@ textarea {
 
 button {
   font-family: $font-stack;
-  font-size:$font_size_small;
+  font-size: var(--font-size-small);
   border: none;
   padding:4px;
   border-radius: 4px;
@@ -311,6 +326,6 @@ button {
 button:hover {
   
   cursor: pointer;
-  background-color: black;
-  color: white;
+  background-color: var(--font-color);
+  color: var(--font-color);
 }

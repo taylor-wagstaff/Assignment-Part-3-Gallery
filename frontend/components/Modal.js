@@ -1,5 +1,3 @@
-import { useState } from 'react'
-
 // https://dev.to/franciscomendes10866/how-to-create-a-modal-in-react-3coc
 // How to Create a Modal in React By Francisco Mendes
 
