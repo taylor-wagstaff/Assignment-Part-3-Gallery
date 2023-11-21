@@ -18,7 +18,8 @@ const Footer = () => {
             <p style={{ color: 'blue' }}>Location of Gallery</p>
             <p>86a Queen Street</p>
             <p>Auckland City Central</p>
-            <div className="buy_button">
+
+            <div>
               <button onClick={() => setIsOpen(true)}>Map</button>
               {isOpen && <Modal setIsOpen={setIsOpen} />}
             </div>
@@ -37,15 +38,15 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-
-                <button type="submit">Subscribe</button>
               </form>
+
+              <button type="submit">Subscribe</button>
             </div>
           </div>
           <div></div>
         </div>
       </footer>
-        <GeoLocation />
+      <GeoLocation />
     </div>
   )
 }

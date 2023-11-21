@@ -61,7 +61,7 @@ p{
 // Grid
 
 .grid-container {
-  padding: 1rem;
+  padding: 0.5rem;
   display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 0.5fr minmax(4fr, max-content) 1fr;
@@ -256,6 +256,10 @@ p{
 .about-content{
 
   grid-area: main;
+  border-top: 1px solid var(--font-color);
+  padding-top:10px;
+  padding-left: 20px;
+  padding-bottom: 100px;
 }
 
 // Contact Form
@@ -294,6 +298,11 @@ form {
   gap:20px;
 }
 
+.location-contents {
+
+  margin:1rem;
+}
+
 input{
   font-family: $font-stack;
   font-size: var(--font-size-small);
@@ -318,14 +327,15 @@ button {
   font-family: $font-stack;
   font-size: var(--font-size-small);
   border: none;
-  padding:4px;
+  padding:5px;
   border-radius: 4px;
   max-width: 100px;
+  
 }
 
 button:hover {
   
   cursor: pointer;
   background-color: var(--font-color);
-  color: var(--font-color);
+  color: white;
 }

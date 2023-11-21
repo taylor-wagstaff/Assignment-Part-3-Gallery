@@ -10,7 +10,8 @@ export default function About() {
       <Header />
       <Navigation />
       <div className="about-content">
-        <p>About Us</p>
+        <p className="category_title">About Us</p>
+        <br />
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

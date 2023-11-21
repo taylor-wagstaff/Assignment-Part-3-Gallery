@@ -56,7 +56,7 @@ export default function Accessibility() {
       <Header />
       <Navigation />
       <div className="about-content">
-        <p>Accessibility</p>
+        <p className="category_title">Accessibility</p>
         <br />
         <label for="size">Font Size: {fontSize}</label>
         <br />

@@ -21,8 +21,7 @@ function urlFor(source) {
 const ptComponents = {
   types: {
     image: ({ value }) => {
-
-      // interactive Js Function to click image for closer look, 
+      // interactive Js Function to click image for closer look,
       // Creates new window, couldnt figure out zoom for sanity images
 
       // Set an onClick listener on an Image in React
@@ -51,10 +50,6 @@ const ptComponents = {
 }
 
 const Post = ({ post }) => {
-  const router = useRouter()
-
-
-
   const {
     title = 'Missing title',
     name = 'Missing name',
@@ -63,7 +58,7 @@ const Post = ({ post }) => {
     body = [],
   } = post
   // added fallback if data not rendered
-  if (router.isFallback) {
+  if (!post) {
     return <div>Loading...</div>
   }
 
@@ -123,6 +118,7 @@ export async function getStaticProps(context) {
     props: {
       post,
     },
+    revalidate: 10,
   }
 }
 export default Post
