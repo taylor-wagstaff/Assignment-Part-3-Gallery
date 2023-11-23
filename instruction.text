@@ -1,0 +1,29 @@
+
+To run the application cd into the Frontend Folder and enter in terminal:
+
+npm run dev
+
+Should run at http://localhost:3000/
+
+However, if content is not showing you might need to login into Sanity.
+Cd into the Studio folder and enter:
+
+npm run dev
+
+Should run at http://localhost:3333/
+
+If you need to login into Sanity, here is my username and password:
+
+taylorwagstaff@gmail.com
+Tredler3412
+
+Let me know if you have any trouble. 
+
+Github link:
+https://github.com/taylor-wagstaff/Assignment-Part-3-Gallery
+
+Note:
+-I wanted to use Mail Chimp for newsletter but it was a nightmare and gave up. 
+-I couldn't get the zoom images working because NextJS makes it extremely difficult, however, as a 
+Compromise you can click the image and it takes you to a new tab to zoom in. 
+-In the Readme there is the criteria list and I have listed which sections demonstrate it. 

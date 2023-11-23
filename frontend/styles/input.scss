@@ -373,7 +373,6 @@ button:hover {
 and (min-device-width: 320px)
 and (max-device-width: 480px) {
   .grid-container {
-    background-color: aquamarine;
     padding: 0.5rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -385,7 +384,6 @@ and (max-device-width: 480px) {
   }
 
   .header-svg {
-    /* Adjust the positioning properties as needed */
     transform: translateX(-40px) translateY(10px);
   }
 
@@ -452,7 +450,6 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) {
   
   .grid-container {
-    background-color: red;
     padding: 0.5rem;
     display: grid;
     grid-template-columns: 1fr;
@@ -464,14 +461,8 @@ and (max-device-width : 1024px) {
   }
 
   .header-svg {
-    /* Adjust the positioning properties as needed */
     transform: translateX(-40px) translateY(10px);
   }
-
-
-
-
-
   
   .footer-container {
     grid-area: footer;

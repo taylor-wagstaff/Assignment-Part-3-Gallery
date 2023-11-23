@@ -14,13 +14,20 @@ export default function Contact() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [isSuccess, setSuccess] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Form submitted!')
+    setSuccess(true)
+  }
 
   return (
     <div className="grid-container">
       <Header />
       <Navigation />
       <div className="form">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <div className="elements-title">
               <p className="category_title">Contact</p>
@@ -60,6 +67,7 @@ export default function Contact() {
                 />
 
                 <button type="submit">Submit</button>
+                {isSuccess && <p className="success-message">Success!</p>}
               </div>
             </div>
           </div>
