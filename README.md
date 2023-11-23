@@ -1,9 +1,5 @@
 # Assignment-Part-3-Gallery
 
-
-Instructions
-Develop the site / app according to its specifications. Your site/ app MUST:
-
 1. Meet all of the following requirements you identified:
 
 business requirements
