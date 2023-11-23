@@ -56,30 +56,36 @@ export default function Accessibility() {
       <Header />
       <Navigation />
       <div className="about-content">
-        <p className="category_title">Accessibility</p>
-        <br />
-        <label for="size">Font Size: {fontSize}</label>
-        <br />
-        <input
-          id="size"
-          name="size"
-          type="range"
-          min="16"
-          max="40"
-          onChange={handleSliderChange}
-          value={fontSize}
-          aria-labelledby="font-size"
-        />
-        <br />
-        <label for="dark-mode">Dark Mode: {isChecked ? 'Dark' : 'Light'}</label>
-        <br />
-        <input
-          type="checkbox"
-          id="dark-mode"
-          onChange={handleChange}
-          value={isChecked}
-          aria-labelledby="dark-mode"
-        ></input>
+          <p className="category_title">Accessibility</p>
+        <div className="accessibility-elements">
+       
+          <label for="size">Font Size: {fontSize}</label>
+          
+          <input
+            id="size"
+            name="size"
+            type="range"
+            min="16"
+            max="40"
+            onChange={handleSliderChange}
+            value={fontSize}
+            aria-labelledby="font-size"
+          />
+ 
+        </div>
+        <div className="accessibility-elements">
+          <label for="dark-mode">
+            Dark Mode: {isChecked ? 'Dark' : 'Light'}
+          </label>
+       
+          <input
+            type="checkbox"
+            id="dark-mode"
+            onChange={handleChange}
+            value={isChecked}
+            aria-labelledby="dark-mode"
+          ></input>
+        </div>
       </div>
       <Footer />
     </div>

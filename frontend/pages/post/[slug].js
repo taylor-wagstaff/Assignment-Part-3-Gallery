@@ -69,7 +69,7 @@ const Post = ({ post }) => {
 
       <div className="exhibition_content">
         {/* change the access to object directly */}
-        <div>
+        <div className="exhibition_text">
           <p>{post.title}</p>
           <p>{post.name}</p>
           <p>{post.opens}</p>

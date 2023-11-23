@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <div className="header_title">
       <header>
-        <svg height="60" width="200">
+        <svg height="60" width="200" className="header-svg">
           <text
             x="40"
             y="30"

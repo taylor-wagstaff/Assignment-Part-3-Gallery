@@ -82,8 +82,6 @@ p{
 // Home Page
 
 .category_title {
-
-
   font-style: italic;
 }
 
@@ -160,8 +158,8 @@ p{
   grid-area: main;
   display: flex;
   flex-direction: column;
-  // max-width: 60%;
   gap:0.5rem;
+  min-height: 510px;
 }
 
 .exhibition_content a{
@@ -175,6 +173,10 @@ p{
   color: lightgray;
   text-decoration: none;
   
+}
+
+.exhibition_images {
+  max-width: 600px;
 }
 
 
@@ -260,12 +262,18 @@ p{
   padding-top:10px;
   padding-left: 20px;
   padding-bottom: 100px;
-}
+  min-height: 400px;
 
+}
+.about-description {
+
+  max-width: 300px;
+}
 // Contact Form
 
 .form{
   grid-area: main;
+  min-height: 510px;
 }
 
 form {
@@ -273,15 +281,22 @@ form {
   flex-direction: column;
 }
 
+.form-elements input {
+  min-width: 200px;
+
+
+}
+
 .form-group {
   display: flex;
   flex-direction: row;
-  margin-bottom:20px;
+
+
 }
 
 .form-elements-container {
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   width:100%;
 
   border-top: 1px solid var(--font-color);
@@ -303,6 +318,14 @@ form {
   margin:1rem;
 }
 
+.accessibility-elements {
+
+  display: flex;
+  flex-direction: row;
+  gap:1rem;
+  margin-top: 1rem;
+}
+
 input{
   font-family: $font-stack;
   font-size: var(--font-size-small);
@@ -321,6 +344,8 @@ textarea {
   resize: none;
   border: 1px solid #DCDADA;
   outline: none;
+  min-width: 200px;
+
 }
 
 button {
@@ -338,4 +363,163 @@ button:hover {
   cursor: pointer;
   background-color: var(--font-color);
   color: white;
+}
+
+
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+  .grid-container {
+    background-color: aquamarine;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr minmax(4fr, max-content) minmax(1fr, max-content); /* Corrected typo here */
+    grid-template-areas:
+      "title title title navigation navigation navigation"
+      "main main main main main main"
+      "footer footer footer footer footer footer";
+  }
+
+  .header-svg {
+    /* Adjust the positioning properties as needed */
+    transform: translateX(-40px) translateY(10px);
+  }
+
+
+
+
+
+  
+  .footer-container {
+    grid-area: footer;
+   
+    padding-top:0px;
+    padding-left: 0px;
+    height: 100%;
+  }
+
+.footer-elements {
+  display:flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%; 
+  max-width: none;
+}
+
+.form-elements-container {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+
+  border-top: 1px solid var(--font-color);
+  border-left: 0px solid var(--font-color);
+  padding-bottom: 100px;
+  padding-top:10px;
+  padding-left: 0px;
+}
+
+
+
+.form-elements {
+  width: 100%; 
+}
+
+.elements-title{
+  min-width:50px;
+  border-top: 1px solid var(--font-color);
+  padding-top:10px;
+  padding-left: 0px;
+}
+
+
+
+input, textarea {
+  max-width: 100%;
+  width: 100%;
+  margin-right: 0; 
+}
+
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+  
+  .grid-container {
+    background-color: red;
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr minmax(4fr, max-content) minmax(1fr, max-content); /* Corrected typo here */
+    grid-template-areas:
+      "title title title navigation navigation navigation"
+      "main main main main main main"
+      "footer footer footer footer footer footer";
+  }
+
+  .header-svg {
+    /* Adjust the positioning properties as needed */
+    transform: translateX(-40px) translateY(10px);
+  }
+
+
+
+
+
+  
+  .footer-container {
+    grid-area: footer;
+   
+    padding-top:0px;
+    padding-left: 0px;
+    height: 100%;
+  }
+
+.footer-elements {
+  display:flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%; 
+  max-width: none;
+}
+
+.form-elements-container {
+  display:flex;
+  flex-direction:row;
+  width:100%;
+
+  border-top: 1px solid var(--font-color);
+  border-left: 0px solid var(--font-color);
+  padding-bottom: 100px;
+  padding-top:10px;
+  padding-left: 0px;
+}
+
+
+
+.form-elements {
+  width: 100%; 
+}
+
+.elements-title{
+  min-width:50px;
+  border-top: 1px solid var(--font-color);
+  padding-top:10px;
+  padding-left: 0px;
+}
+
+
+
+input, textarea {
+  max-width: 100%;
+  width: 300px;
+  margin-right: 0; 
+}
+
 }
