@@ -16,6 +16,21 @@ export default function Contact() {
   const [message, setMessage] = useState('')
   const [isSuccess, setSuccess] = useState(false)
 
+  // INCIDENT-03: Fixed issue of being able to allow numbers and symbols in
+  // Name and Message inputs. Changed so that letters are only allowed by using the
+  // replace function
+  const handleNameChange = (e) => {
+    // Allow only alphabets in the Name input
+    const newName = e.target.value.replace(/[^A-Za-z\s]/g, '')
+    setName(newName)
+  }
+
+  const handleMessageChange = (e) => {
+    // Allow only alphabets in the Message input
+    const newMessage = e.target.value.replace(/[^A-Za-z\s]/g, '')
+    setMessage(newMessage)
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log('Form submitted!')
@@ -29,7 +44,7 @@ export default function Contact() {
       <div className="form">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <div className="elements-title">
+            <div className="form-title">
               <p className="category_title">Contact</p>
             </div>
             <div className="form-elements-container">
@@ -44,7 +59,7 @@ export default function Contact() {
                   autoComplete="on"
                   required
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  onChange={handleNameChange}
                 />
 
                 <input
@@ -61,9 +76,10 @@ export default function Contact() {
                   name="message"
                   rows="10"
                   cols="50"
+                  required
                   placeholder="Please leave your message here.."
                   value={message}
-                  onChange={(e) => setMessage(e.target.value)}
+                  onChange={handleMessageChange}
                 />
 
                 <button type="submit">Submit</button>

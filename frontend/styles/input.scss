@@ -287,6 +287,16 @@ form {
 
 }
 
+.form-title{
+  
+  width:100px;
+  border-top: 1px solid var(--font-color);
+  padding-top:10px;
+  padding-left: 20px;
+ 
+ 
+}
+
 .form-group {
   display: flex;
   flex-direction: row;
@@ -408,16 +418,28 @@ and (max-device-width: 480px) {
   max-width: none;
 }
 
+// INCIDENT-02: Fixed the contact form overtaking the container and misaligning 
+// the layout in mobile view. 
+// Added a flex column 
+// Culprit was the sizing of the inputs 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--font-color);
+
+}
+
+
 .form-elements-container {
   display:flex;
-  flex-direction:row;
-  width:100%;
-
-  border-top: 1px solid var(--font-color);
+  flex-direction:column;
+  width: 100%;
+  // removed borders 
+  border-top: 0px solid var(--font-color);
   border-left: 0px solid var(--font-color);
   padding-bottom: 100px;
   padding-top:10px;
-  padding-left: 0px;
+ 
 }
 
 
@@ -426,18 +448,19 @@ and (max-device-width: 480px) {
   width: 100%; 
 }
 
-.elements-title{
-  min-width:50px;
-  border-top: 1px solid var(--font-color);
+.form-title{
+
+  max-width: 100%;
+  border-top: 0px solid var(--font-color);
   padding-top:10px;
-  padding-left: 0px;
+  
 }
 
 
 
 input, textarea {
-  max-width: 100%;
-  width: 100%;
+// Made dynamically to 90%, werdily 100% didnt fix issue.
+  max-width: 90%;
   margin-right: 0; 
 }
 
@@ -498,7 +521,7 @@ and (max-device-width : 1024px) {
   width: 100%; 
 }
 
-.elements-title{
+.form-title{
   min-width:50px;
   border-top: 1px solid var(--font-color);
   padding-top:10px;

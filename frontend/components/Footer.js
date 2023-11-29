@@ -3,9 +3,23 @@ import { useState } from 'react'
 import Modal from './Modal'
 import GeoLocation from './GeoLocation'
 
+// INCIDENT-01: Fix Success messgage on Newsletter once user enters correct email and
+// clicks Success
 const Footer = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [email, setEmail] = useState('')
+  const [isSuccess, setSuccess] = useState(false)
+
+  // Added Handle Submit once clicked
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('Form submitted!')
+    // check if email is not empty to submit
+    if (email !== '') {
+      setSuccess(true)
+    }
+  }
+
   return (
     <div className="footer-container">
       <footer>
@@ -30,7 +44,7 @@ const Footer = () => {
                 <p style={{ color: 'blue' }}>Newsletter</p>
                 <p>Sign up to receive the latest updates on the gallery </p>
               </div>
-              <form>
+              <form onSubmit={handleSubmit}>
                 <input
                   type="email"
                   id="email"
@@ -38,9 +52,9 @@ const Footer = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                <button type="submit">Subscribe</button>
+                {isSuccess && <p className="success-message">Success!</p>}
               </form>
-
-              <button type="submit">Subscribe</button>
             </div>
           </div>
           <div></div>
